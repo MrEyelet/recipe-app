@@ -7,6 +7,7 @@ const App = () => {
   const APP_ID = "463c22d8"
   const APP_KEY = "085aad273d11b7ddab47599cd4f1166d"
   const [recipes, setRecipes] = useState([])
+  const [search, setSearch] = useState("")
   //get recipies data
   const getRecipes = async () => {
     try {
@@ -25,10 +26,15 @@ const App = () => {
     getRecipes()
   }, [])
 
+  const updateSearch = e => {
+    setSearch(e.target.value)
+    console.log(search)
+  }
+
   return (
     <div className="App">
       <form className="search-form">
-        <input className="search-bar" type="text" />
+        <input className="search-bar" type="text" value={search} onChange={updateSearch} />
         <button className="search-button" type="submit">
           Search
         </button>
