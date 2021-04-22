@@ -49,7 +49,7 @@ const App = () => {
       {/* map thru fetched array */}
       <div>
         {recipes.map((el, index) => (
-          <Recipe key={`recipe-${index}`} label={el.recipe.label} calories={el.recipe.calories} image={el.recipe.image} />
+          <Recipe key={`recipe-${index}`} label={el.recipe.label} calories={el.recipe.calories} image={el.recipe.image} ingredients={el.recipe.ingredients} />
         ))}
       </div>
     </div>
